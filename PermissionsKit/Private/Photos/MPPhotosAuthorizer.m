@@ -51,6 +51,11 @@
             return MPAuthorizationStatusAuthorized;
         case PHAuthorizationStatusNotDetermined:
             return MPAuthorizationStatusNotDetermined;
+// JUM 2020-09-04: PHAuthorizationStatusLimited is defined as AVAILABLE(ios(14)), yet when building with Xcode 12, compiler claims this exists... resorting to having a default: statement for now...
+//        case PHAuthorizationStatusLimited:
+//            return MPAuthorizationStatusAuthorized;
+        default:
+            return MPAuthorizationStatusNotDetermined;
     }
 }
 
